@@ -9,7 +9,7 @@ from IterativeRootFinder import *
 
 # 定义一个待求迭代根的函数 g
 def g(x):
-	return math.sin(math.pi/2*x)
+    return math.sin(math.pi/2*x)
 
 # 在 ]0, 1[ 范围内任选两个数 Lambda 和 Mu
 Lambda = 0.5
@@ -17,7 +17,7 @@ Mu = 0.5
 
 # 定义一个 [0, 1] 映射到 [0, 1] 的严格单调递增的连续自映射 alpha
 def alpha(t):
-	return t
+    return t
 
 # 将 g, Lambda, Mu, alpha 传入 IterativeRootFinder
 root_finder = IterativeRootFinder(g, Lambda, Mu, alpha)
@@ -29,9 +29,9 @@ yg = np.zeros((300,))
 yff = np.zeros((300,))
 
 for i in range(x.shape[0]):
-	yg[i] = g(x[i])
-	yf[i] = root_finder.f(x[i])
-	yff[i] = root_finder.f(root_finder.f(x[i]))
+    yg[i] = g(x[i])
+    yf[i] = root_finder.f(x[i])
+    yff[i] = root_finder.f(root_finder.f(x[i]))
 
 plt.plot(x, yg, label="y = g(x)")
 plt.plot(x, yf, color=(140/255,117/255,112/255), label="y = f(x)")
